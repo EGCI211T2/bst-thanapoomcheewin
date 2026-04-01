@@ -24,7 +24,7 @@ public:
 
 typedef TreeNode* TreeNodePtr;
 
-// ---- Implementation ----
+
 
 TreeNode::TreeNode(int x){
     data = x;

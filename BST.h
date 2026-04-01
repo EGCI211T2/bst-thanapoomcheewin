@@ -18,26 +18,24 @@ public:
     void print(int = 0);
 };
 
-// ---- Helper Functions ----
+
 void inOrder(TreeNodePtr);
 void preOrder(TreeNodePtr);
 void postOrder(TreeNodePtr);
 void printTree(TreeNodePtr, int);
 void kill(TreeNodePtr);
 
-// ---- Constructor ----
 BST::BST() {
     rootPtr = NULL;
     size = 0;
 }
 
-// ---- Destructor ----
+
 BST::~BST() {
     cout << "Kill BST" << endl;
     kill(rootPtr);
 }
 
-// ---- Insert ----
 void BST::insert_node(int value) {
     TreeNodePtr new_node = new TreeNode(value);
 
@@ -65,11 +63,11 @@ void BST::insert_node(int value) {
         }
     }
 
-    cout << value << "inserted" << endl;
+    cout << value << " inserted" << endl;
     ++size;
 }
 
-// ---- Print Options ----
+
 void BST::print(int option) {
     switch (option) {
     case 0:
@@ -104,7 +102,6 @@ void BST::print(int option) {
     }
 }
 
-// ---- Traversals ----
 void inOrder(TreeNodePtr treePtr) {
     if (treePtr) {
         inOrder(treePtr->move_left());
@@ -129,7 +126,7 @@ void postOrder(TreeNodePtr treePtr) {
     }
 }
 
-// ---- Print Tree (sideways) ----
+
 void printTree(TreeNodePtr treePtr, int level) {
     if (treePtr) {
         printTree(treePtr->move_right(), level + 1);
@@ -137,13 +134,13 @@ void printTree(TreeNodePtr treePtr, int level) {
         for (int i = 0; i < level; i++)
             cout << "   ";
 
-        cout << treePtr->get_value() << endl;
+        cout << treePtr->get_value() << "\n";
 
         printTree(treePtr->move_left(), level + 1);
     }
 }
 
-// ---- Delete Tree ----
+
 void kill(TreeNodePtr treePtr) {
     if (treePtr) {
         kill(treePtr->move_left());

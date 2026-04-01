@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
         b.insert_node(atoi(argv[i]));
     }
 
-    b.print(4); // print everything + tree
+    b.print(4); 
 
     return 0;
 }
